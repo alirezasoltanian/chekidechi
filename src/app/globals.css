@@ -1,0 +1,152 @@
+@import "tailwindcss";
+
+:root {
+  --bg-color: #fff;
+  --font-color: #2b363b;
+  --button-background: #fff9ec;
+  --button-border: #3d5561;
+  --button-text: #4f6773;
+
+  --transition-ease: cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-time: 0.15s;
+
+
+  --led-main-color: #ff0404;
+  --led-shade-color: #cf8600;
+  --radius: 0.625rem;
+  --background: oklch(0.91 0.048 83.6);
+  --foreground: oklch(0.41 0.077 78.9);
+  --card: oklch(0.92 0.042 83.6);
+  --card-foreground: oklch(0.41 0.077 74.3);
+  --popover: oklch(0.92 0.042 83.6);
+  --popover-foreground: oklch(0.41 0.077 74.3);
+  --primary: oklch(0.71 0.097 111.7);
+  --primary-foreground: oklch(0.98 0.005 0);
+  --secondary: oklch(0.88 0.055 83.6);
+  --secondary-foreground: oklch(0.51 0.077 78.9);
+  --muted: oklch(0.86 0.064 83.7);
+  --muted-foreground: oklch(0.51 0.077 74.3);
+  --accent: oklch(0.86 0.055 83.6);
+  --accent-foreground: oklch(0.26 0.016 0);
+  --destructive: oklch(0.63 0.24 29.2);
+  --border: oklch(0.74 0.063 80.8);
+  --input: oklch(0.74 0.063 80.8);
+  --ring: oklch(0.51 0.077 74.3);
+  --accent-foreground: hsl(240, 5.9%, 10%);
+  --destructive: hsl(0, 84.2%, 60.2%);
+  --destructive-foreground: hsl(0, 0%, 98%);
+  --chart-1: hsl(12, 76%, 61%);
+  --chart-2: hsl(173, 58%, 39%);
+  --chart-3: hsl(197, 37%, 24%);
+  --chart-4: hsl(43, 74%, 66%);
+  --chart-5: hsl(27, 87%, 67%);
+}
+@theme inline {
+  --font-base: var(--font-base), sans-serif;
+  --font-medium: var(--font-medium), sans-serif;
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --shadow-xs: 0 2px 0 0 var(--border);
+  --shadow-sm: 0 3px 0 0 var(--border);
+  --shadow-md: 0 6px 0 0 var(--border);
+  --shadow-lg: 0 8px 0 0 var(--border);
+  --shadow-xl: 0 10px 0 0 var(--border);
+  --shadow-2xl: 0 2px 0 0 var(--border);
+  --shadow-3xl: 0 2px 0 0 var(--border);
+}
+body {
+  color: var(--foreground-rgb);
+  background: linear-gradient(
+      to bottom,
+      transparent,
+      rgb(var(--background-end-rgb))
+    )
+    rgb(var(--background-start-rgb));
+  font-family: "Vazirmatn", system-ui, -apple-system, sans-serif;
+}
+
+.wheel-container {
+  @apply relative w-[300px] h-[300px] mx-auto;
+}
+
+.wheel {
+  @apply w-full h-full rounded-full relative overflow-hidden transition-transform duration-[4s] shadow-[0_0_0_3px_white,0_0_0_5px_#ddd];
+  transform: rotate(0deg);
+  transition-timing-function: cubic-bezier(0.17, 0.67, 0.83, 0.67);
+}
+
+.wheel.spinning {
+  @apply transition-transform duration-[4s];
+  transition-timing-function: cubic-bezier(0.17, 0.67, 0.83, 0.67);
+}
+
+.segment {
+  @apply absolute w-1/2 h-1/2;
+  transform-origin: 100% 100%;
+}
+button {
+  cursor: pointer;
+}
+@layer base {
+  .border {
+    border-width: 2px !important;
+  }
+  .border-l {
+    border-left-width: 2px !important;
+  }
+  .border-r {
+    border-right-width: 2px !important;
+  }
+  .border-t {
+    border-top-width: 2px !important;
+  }
+  .border-b {
+    border-bottom-width: 2px !important;
+  }
+  .shadow-primary {
+    box-shadow: 0 2px 0 0 var(--primary-border);
+  }
+  .shadow-destructive {
+    box-shadow: 0 2px 0 0 var(--destructive);
+  }
+  .shadow-destructive-border {
+    box-shadow: 0 2px 0 0 var(--destructive-border);
+  }
+  .texture {
+    background-image: url("/texture.jpg");
+    background-size: 100% 100%;
+    background-repeat: repeat;
+    opacity: 0.12;
+    mix-blend-mode: multiply;
+    z-index: 100;
+    isolation: isolate;
+    position: fixed;
+    inset: 0;
+    width: 100vw;
+    height: 100dvh;
+    pointer-events: none;
+  }
+}

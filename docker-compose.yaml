@@ -1,0 +1,22 @@
+version: "3.8"
+
+services:
+  web:
+    build: .
+    ports:
+      - "3003:3003"
+    environment:
+      - NODE_ENV=production
+    restart: unless-stopped
+    container_name: solopbot
+    volumes:
+      - ./vaaski-telegram-ytdl:/app/storage
+    networks:
+      - shared_network
+
+volumes:
+  postgres_data:
+
+networks:
+  shared_network:
+    external: true

@@ -1,0 +1,52 @@
+{
+  "compilerOptions": {
+    "types": [
+      // This allows Serwist to type `window.serwist`.
+      // "@serwist/next/typings"
+    ],
+    /* Base Options: */
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "target": "es2022",
+    "allowJs": true,
+    "resolveJsonModule": true,
+    "moduleDetection": "force",
+    "isolatedModules": true,
+    /* Strictness */
+    "strict": true,
+    "noUncheckedIndexedAccess": true,
+    "checkJs": true,
+    /* Bundled projects */
+    "lib": ["dom", "dom.iterable", "ES2022", "webworker"],
+    "noEmit": true,
+    "module": "ESNext",
+    "moduleResolution": "Bundler",
+    "jsx": "preserve",
+    "plugins": [{ "name": "next" }],
+    "incremental": true,
+    /* Path Aliases */
+    "baseUrl": ".",
+    "paths": {
+      "@/*": ["./src/*"]
+      // "contentlayer/generated": ["./.contentlayer/generated"]
+    }
+  },
+  "include": [
+    "next.config.js",
+    ".eslintrc.cjs",
+    "next-env.d.ts",
+    "**/*.ts",
+    "**/*.tsx",
+    "**/*.cjs",
+    "**/*.js",
+    ".next/types/**/*.ts",
+    // "contentlayer.config.ts",
+    // ".contentlayer/generated",
+    "src/data.js",
+    "src/env.js",
+    "trigger.config.ts"
+    // "servern.mjs"
+  ],
+  "exclude": ["node_modules"]
+}
+// https://www.totaltypescript.com/tsconfig-cheat-sheet

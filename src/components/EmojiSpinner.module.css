@@ -1,0 +1,41 @@
+.spinnerContainer {
+  position: relative;
+  width: 70vw;
+  height: 70vh;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+
+.spinner {
+  width: 100%;
+  height: 100%;
+}
+
+.controls {
+  position: fixed;
+  right: 15px;
+  top: 10px;
+}
+
+.controls input {
+  min-width: 100px;
+}
+
+.spinner :global(.slice > path) {
+  transition: stroke-width 0.3s ease-out;
+}
+
+.spinner :global(.slice > text) {
+  transition: font-size 0.3s ease-out, font-weight 0.3s ease-out;
+}
+
+.spinner :global(.winner > path) {
+  stroke-width: 35;
+}
+
+.spinner :global(.winner > text) {
+  font-weight: bold;
+  font-size: 12px;
+}

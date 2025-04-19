@@ -231,7 +231,6 @@ const MemeGenerator: React.FC = () => {
                               chatId: Number(userBaleInfo?.id) || 0,
                               inputFile: photo,
                               caption: "",
-                              reply_markup: {},
                             });
                             toast.success("میم با موفقیت ارسال شد");
                           } catch (error) {

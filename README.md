@@ -1,12 +1,6 @@
-# 🤖 Soloop Bot - Telegram & Bale Assistant
+# 🤖 Chekidechi (Telegram & Bale) Bot - list telegram Channel for Q&A with AI
 
-<div dir="rtl">
-
-# 🤖 سولوپ بات - دستیار تلگرام و بله
-
-</div>
-
-## 🌟 Features | قابلیت‌ها
+## 🌟 Features
 
 ### 1. Telegram Channel Integration | ادغام کانال‌های تلگرام
 
@@ -121,7 +115,7 @@ YTDL_AUTOUPDATE=true
 # Enable automatic ytdl-core updates
 ```
 
-### Platform Selection Guide | راهنمای انتخاب پلتفرم
+### Platform Selection Guide
 
 1. **For Telegram Bot:**
 
@@ -134,7 +128,7 @@ YTDL_AUTOUPDATE=true
    - Configure `BALE_BOT_TOKEN` with your Bale bot token
    - You can leave Telegram configuration empty
 
-### Important Notes | نکات مهم
+### Important Notes
 
 - Choose only one platform (Telegram or Bale) to configure
 - Replace all placeholder values with your actual credentials
@@ -150,21 +144,17 @@ npm start
 yarn start
 ```
 
-## 📝 Configuration | پیکربندی
+## 📝 Configuration
 
 The bot can be configured through the following environment variables:
 
 - `TELEGRAM_BOT_TOKEN`: Your Telegram bot token
 - `BALE_BOT_TOKEN`: Your Bale bot token
-- `PORT`: Server port (default: 3000)
+- `PORT`: Server port (default: 3003)
 - `NODE_ENV`: Environment (development/production)
 
 ## 🤝 Contributing
 
 We welcome contributions! Please feel free to submit a Pull Request.
-
-## 📄 License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
 ---

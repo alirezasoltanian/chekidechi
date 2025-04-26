@@ -24,16 +24,16 @@ async function sendBroadcastMessage(bot: Bot<MyContext>, text: string) {
   // ارسال پیام به هر کاربر با فاصله زمانی کوتاه برای جلوگیری از محدودیت‌های API
 
   for (const user of allUsers) {
-    const videoPath = "./public/videos/complete.mp4";
-    const videoBuffer = fs.readFileSync(videoPath);
-    const video = new InputFile(videoBuffer, "complete.mp4");
+    // const videoPath = "./public/videos/complete.mp4";
+    // const videoBuffer = fs.readFileSync(videoPath);
+    // const video = new InputFile(videoBuffer, "complete.mp4");
     try {
-      await sendVideo({
-        chatId: Number(user.chatId),
-        inputFile: video,
-        caption: text,
-      });
-      // await bot.api.sendMessage(user.chatId, text);
+      // await sendVideo({
+      //   chatId: Number(user.chatId),
+      //   inputFile: video,
+      //   caption: text,
+      // });
+      await bot.api.sendMessage(user.chatId, text);
       successful++;
       // if (user.token) {
       //   await db

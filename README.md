@@ -153,6 +153,23 @@ The bot can be configured through the following environment variables:
 - `PORT`: Server port (default: 3003)
 - `NODE_ENV`: Environment (development/production)
 
+### Webhook Setup
+
+After starting the application, you need to set up webhooks for your bot:
+
+1. **For Telegram Bot:**
+
+   ```bash
+   curl -F "url=https://your-domain.com/api/bot" https://api.telegram.org/bot<YOUR_BOT_TOKEN>/setWebhook
+   ```
+
+2. **For Bale Bot:**
+   ```bash
+   curl -F "url=https://your-domain.com/api/bot" https://tapi.bale.ai/bot<YOUR_BOT_TOKEN>/setWebhook
+   ```
+
+Replace `<YOUR_BOT_TOKEN>` with your actual bot token in the commands above.
+
 ## 🤝 Contributing
 
 We welcome contributions! Please feel free to submit a Pull Request.

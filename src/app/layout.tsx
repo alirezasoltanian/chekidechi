@@ -50,18 +50,6 @@ export default function RootLayout({
           };
           setUserBaleInfo(baleUser);
         }
-      } else {
-        const user = await getUser("885375069");
-
-        const baleUser = {
-          username: "ttt",
-          id: 885375069,
-          first_name: "ttt",
-          allows_write_to_pm: true,
-          token: user.token,
-          initData: "initData",
-        };
-        setUserBaleInfo(baleUser);
       }
     };
 
